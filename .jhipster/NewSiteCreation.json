@@ -1,0 +1,309 @@
+{
+    "name": "NewSiteCreation",
+    "fields": [
+        {
+            "fieldName": "requestName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "wbtsId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rncId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wbtsName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lcrId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "templateName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "priSrcCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wlcseId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "antBearing",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wlcseRncId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "antennaCoordLatitude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "antennaCoordLongitude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "siteName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "technology",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "goldenParametersWbts",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "goldenParametersWcell",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "goldenParametersWlcse",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "adjGid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjgNcc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjgBcc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjgBcch",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjgBandIndicator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjgCi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjgLac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjsId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjsCi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjsLac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjsRac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjsRnCid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjsSrcCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjiId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjiCi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjiLac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjiRac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjiRnCid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjiSrcCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bscId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bcfId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "btsId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjwCid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjwLac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adjwRncId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scramblingCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "goldenParametersAdji",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "goldenParametersAdjs",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "goldenParametersAdjg",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "goldenParametersAdjw",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "rfDatabase",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "neighborDatabase",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "outputWbts",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcell",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellAc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellLc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellPc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellHc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellPS",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellSib",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWcellUraid",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputWlcse",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputAdji",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputAdjs",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputAdjg",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "outputAdjw",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190102083215",
+    "entityTableName": "new_site_creation",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

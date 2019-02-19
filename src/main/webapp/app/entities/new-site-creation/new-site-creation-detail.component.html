@@ -1,0 +1,354 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="newSiteCreation">
+            <h2><span>New Site Creation</span> {{newSiteCreation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Request Name</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.requestName}}</span>
+                </dd>
+                <dt><span>Wbts Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.wbtsId}}</span>
+                </dd>
+                <dt><span>Rnc Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.rncId}}</span>
+                </dd>
+                <dt><span>Wbts Name</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.wbtsName}}</span>
+                </dd>
+                <dt><span>Lcr Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.lcrId}}</span>
+                </dd>
+                <dt><span>Lac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.lac}}</span>
+                </dd>
+                <dt><span>Rac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.rac}}</span>
+                </dd>
+                <dt><span>Sac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.sac}}</span>
+                </dd>
+                <dt><span>C Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.cId}}</span>
+                </dd>
+                <dt><span>Template Name</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.templateName}}</span>
+                </dd>
+                <dt><span>Pri Src Code</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.priSrcCode}}</span>
+                </dd>
+                <dt><span>Wlcse Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.wlcseId}}</span>
+                </dd>
+                <dt><span>Ant Bearing</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.antBearing}}</span>
+                </dd>
+                <dt><span>Wlcse Rnc Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.wlcseRncId}}</span>
+                </dd>
+                <dt><span>Antenna Coord Latitude</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.antennaCoordLatitude}}</span>
+                </dd>
+                <dt><span>Antenna Coord Longitude</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.antennaCoordLongitude}}</span>
+                </dd>
+                <dt><span>Site Name</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.siteName}}</span>
+                </dd>
+                <dt><span>Technology</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.technology}}</span>
+                </dd>
+                <dt><span>Golden Parameters Wbts</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersWbts">
+                        <a (click)="openFile(newSiteCreation.goldenParametersWbtsContentType, newSiteCreation.goldenParametersWbts)">open</a>
+                        {{newSiteCreation.goldenParametersWbtsContentType}}, {{byteSize(newSiteCreation.goldenParametersWbts)}}
+                    </div>
+                </dd>
+                <dt><span>Golden Parameters Wcell</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersWcell">
+                        <a (click)="openFile(newSiteCreation.goldenParametersWcellContentType, newSiteCreation.goldenParametersWcell)">open</a>
+                        {{newSiteCreation.goldenParametersWcellContentType}}, {{byteSize(newSiteCreation.goldenParametersWcell)}}
+                    </div>
+                </dd>
+                <dt><span>Golden Parameters Wlcse</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersWlcse">
+                        <a (click)="openFile(newSiteCreation.goldenParametersWlcseContentType, newSiteCreation.goldenParametersWlcse)">open</a>
+                        {{newSiteCreation.goldenParametersWlcseContentType}}, {{byteSize(newSiteCreation.goldenParametersWlcse)}}
+                    </div>
+                </dd>
+                <dt><span>Adj Gid</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjGid}}</span>
+                </dd>
+                <dt><span>Adjg Ncc</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjgNcc}}</span>
+                </dd>
+                <dt><span>Adjg Bcc</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjgBcc}}</span>
+                </dd>
+                <dt><span>Adjg Bcch</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjgBcch}}</span>
+                </dd>
+                <dt><span>Adjg Band Indicator</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjgBandIndicator}}</span>
+                </dd>
+                <dt><span>Adjg Ci</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjgCi}}</span>
+                </dd>
+                <dt><span>Adjg Lac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjgLac}}</span>
+                </dd>
+                <dt><span>Adjs Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjsId}}</span>
+                </dd>
+                <dt><span>Adjs Ci</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjsCi}}</span>
+                </dd>
+                <dt><span>Adjs Lac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjsLac}}</span>
+                </dd>
+                <dt><span>Adjs Rac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjsRac}}</span>
+                </dd>
+                <dt><span>Adjs Rn Cid</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjsRnCid}}</span>
+                </dd>
+                <dt><span>Adjs Src Code</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjsSrcCode}}</span>
+                </dd>
+                <dt><span>Adji Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjiId}}</span>
+                </dd>
+                <dt><span>Adji Ci</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjiCi}}</span>
+                </dd>
+                <dt><span>Adji Lac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjiLac}}</span>
+                </dd>
+                <dt><span>Adji Rac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjiRac}}</span>
+                </dd>
+                <dt><span>Adji Rn Cid</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjiRnCid}}</span>
+                </dd>
+                <dt><span>Adji Src Code</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjiSrcCode}}</span>
+                </dd>
+                <dt><span>Bsc Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.bscId}}</span>
+                </dd>
+                <dt><span>Bcf Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.bcfId}}</span>
+                </dd>
+                <dt><span>Bts Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.btsId}}</span>
+                </dd>
+                <dt><span>Adjw Cid</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjwCid}}</span>
+                </dd>
+                <dt><span>Adjw Lac</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjwLac}}</span>
+                </dd>
+                <dt><span>Adjw Rnc Id</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.adjwRncId}}</span>
+                </dd>
+                <dt><span>Scrambling Code</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.scramblingCode}}</span>
+                </dd>
+                <dt><span>Golden Parameters Adji</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersAdji">
+                        <a (click)="openFile(newSiteCreation.goldenParametersAdjiContentType, newSiteCreation.goldenParametersAdji)">open</a>
+                        {{newSiteCreation.goldenParametersAdjiContentType}}, {{byteSize(newSiteCreation.goldenParametersAdji)}}
+                    </div>
+                </dd>
+                <dt><span>Golden Parameters Adjs</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersAdjs">
+                        <a (click)="openFile(newSiteCreation.goldenParametersAdjsContentType, newSiteCreation.goldenParametersAdjs)">open</a>
+                        {{newSiteCreation.goldenParametersAdjsContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjs)}}
+                    </div>
+                </dd>
+                <dt><span>Golden Parameters Adjg</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersAdjg">
+                        <a (click)="openFile(newSiteCreation.goldenParametersAdjgContentType, newSiteCreation.goldenParametersAdjg)">open</a>
+                        {{newSiteCreation.goldenParametersAdjgContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjg)}}
+                    </div>
+                </dd>
+                <dt><span>Golden Parameters Adjw</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.goldenParametersAdjw">
+                        <a (click)="openFile(newSiteCreation.goldenParametersAdjwContentType, newSiteCreation.goldenParametersAdjw)">open</a>
+                        {{newSiteCreation.goldenParametersAdjwContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjw)}}
+                    </div>
+                </dd>
+                <dt><span>Rf Database</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.rfDatabase}}</span>
+                </dd>
+                <dt><span>Neighbor Database</span></dt>
+                <dd>
+                    <span>{{newSiteCreation.neighborDatabase}}</span>
+                </dd>
+                <dt><span>Output Wbts</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWbts">
+                        <a (click)="openFile(newSiteCreation.outputWbtsContentType, newSiteCreation.outputWbts)">open</a>
+                        {{newSiteCreation.outputWbtsContentType}}, {{byteSize(newSiteCreation.outputWbts)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcell">
+                        <a (click)="openFile(newSiteCreation.outputWcellContentType, newSiteCreation.outputWcell)">open</a>
+                        {{newSiteCreation.outputWcellContentType}}, {{byteSize(newSiteCreation.outputWcell)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell Ac</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellAc">
+                        <a (click)="openFile(newSiteCreation.outputWcellAcContentType, newSiteCreation.outputWcellAc)">open</a>
+                        {{newSiteCreation.outputWcellAcContentType}}, {{byteSize(newSiteCreation.outputWcellAc)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell Lc</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellLc">
+                        <a (click)="openFile(newSiteCreation.outputWcellLcContentType, newSiteCreation.outputWcellLc)">open</a>
+                        {{newSiteCreation.outputWcellLcContentType}}, {{byteSize(newSiteCreation.outputWcellLc)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell Pc</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellPc">
+                        <a (click)="openFile(newSiteCreation.outputWcellPcContentType, newSiteCreation.outputWcellPc)">open</a>
+                        {{newSiteCreation.outputWcellPcContentType}}, {{byteSize(newSiteCreation.outputWcellPc)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell Hc</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellHc">
+                        <a (click)="openFile(newSiteCreation.outputWcellHcContentType, newSiteCreation.outputWcellHc)">open</a>
+                        {{newSiteCreation.outputWcellHcContentType}}, {{byteSize(newSiteCreation.outputWcellHc)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell PS</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellPS">
+                        <a (click)="openFile(newSiteCreation.outputWcellPSContentType, newSiteCreation.outputWcellPS)">open</a>
+                        {{newSiteCreation.outputWcellPSContentType}}, {{byteSize(newSiteCreation.outputWcellPS)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell Sib</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellSib">
+                        <a (click)="openFile(newSiteCreation.outputWcellSibContentType, newSiteCreation.outputWcellSib)">open</a>
+                        {{newSiteCreation.outputWcellSibContentType}}, {{byteSize(newSiteCreation.outputWcellSib)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wcell Uraid</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWcellUraid">
+                        <a (click)="openFile(newSiteCreation.outputWcellUraidContentType, newSiteCreation.outputWcellUraid)">open</a>
+                        {{newSiteCreation.outputWcellUraidContentType}}, {{byteSize(newSiteCreation.outputWcellUraid)}}
+                    </div>
+                </dd>
+                <dt><span>Output Wlcse</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputWlcse">
+                        <a (click)="openFile(newSiteCreation.outputWlcseContentType, newSiteCreation.outputWlcse)">open</a>
+                        {{newSiteCreation.outputWlcseContentType}}, {{byteSize(newSiteCreation.outputWlcse)}}
+                    </div>
+                </dd>
+                <dt><span>Output Adji</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputAdji">
+                        <a (click)="openFile(newSiteCreation.outputAdjiContentType, newSiteCreation.outputAdji)">open</a>
+                        {{newSiteCreation.outputAdjiContentType}}, {{byteSize(newSiteCreation.outputAdji)}}
+                    </div>
+                </dd>
+                <dt><span>Output Adjs</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputAdjs">
+                        <a (click)="openFile(newSiteCreation.outputAdjsContentType, newSiteCreation.outputAdjs)">open</a>
+                        {{newSiteCreation.outputAdjsContentType}}, {{byteSize(newSiteCreation.outputAdjs)}}
+                    </div>
+                </dd>
+                <dt><span>Output Adjg</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputAdjg">
+                        <a (click)="openFile(newSiteCreation.outputAdjgContentType, newSiteCreation.outputAdjg)">open</a>
+                        {{newSiteCreation.outputAdjgContentType}}, {{byteSize(newSiteCreation.outputAdjg)}}
+                    </div>
+                </dd>
+                <dt><span>Output Adjw</span></dt>
+                <dd>
+                    <div *ngIf="newSiteCreation.outputAdjw">
+                        <a (click)="openFile(newSiteCreation.outputAdjwContentType, newSiteCreation.outputAdjw)">open</a>
+                        {{newSiteCreation.outputAdjwContentType}}, {{byteSize(newSiteCreation.outputAdjw)}}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/new-site-creation', newSiteCreation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

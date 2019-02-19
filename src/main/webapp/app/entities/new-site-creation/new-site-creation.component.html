@@ -1,0 +1,257 @@
+<div>
+    <h2 id="page-heading">
+        <span>New Site Creations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-new-site-creation" [routerLink]="['/new-site-creation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new New Site Creation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="newSiteCreations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="requestName"><span>Request Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="wbtsId"><span>Wbts Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rncId"><span>Rnc Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="wbtsName"><span>Wbts Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <!--th jhiSortBy="lcrId"><span>Lcr Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lac"><span>Lac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rac"><span>Rac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sac"><span>Sac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cId"><span>C Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="templateName"><span>Template Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="priSrcCode"><span>Pri Src Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="wlcseId"><span>Wlcse Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="antBearing"><span>Ant Bearing</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="wlcseRncId"><span>Wlcse Rnc Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="antennaCoordLatitude"><span>Antenna Coord Latitude</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="antennaCoordLongitude"><span>Antenna Coord Longitude</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="siteName"><span>Site Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="technology"><span>Technology</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersWbts"><span>Golden Parameters Wbts</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersWcell"><span>Golden Parameters Wcell</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersWlcse"><span>Golden Parameters Wlcse</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjGid"><span>Adj Gid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjgNcc"><span>Adjg Ncc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjgBcc"><span>Adjg Bcc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjgBcch"><span>Adjg Bcch</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjgBandIndicator"><span>Adjg Band Indicator</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjgCi"><span>Adjg Ci</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjgLac"><span>Adjg Lac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjsId"><span>Adjs Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjsCi"><span>Adjs Ci</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjsLac"><span>Adjs Lac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjsRac"><span>Adjs Rac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjsRnCid"><span>Adjs Rn Cid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjsSrcCode"><span>Adjs Src Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjiId"><span>Adji Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjiCi"><span>Adji Ci</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjiLac"><span>Adji Lac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjiRac"><span>Adji Rac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjiRnCid"><span>Adji Rn Cid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjiSrcCode"><span>Adji Src Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bscId"><span>Bsc Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bcfId"><span>Bcf Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="btsId"><span>Bts Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjwCid"><span>Adjw Cid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjwLac"><span>Adjw Lac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adjwRncId"><span>Adjw Rnc Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="scramblingCode"><span>Scrambling Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersAdji"><span>Golden Parameters Adji</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersAdjs"><span>Golden Parameters Adjs</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersAdjg"><span>Golden Parameters Adjg</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goldenParametersAdjw"><span>Golden Parameters Adjw</span> <fa-icon [icon]="'sort'"></fa-icon></th-->
+            <th jhiSortBy="rfDatabase"><span>Rf Database</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="neighborDatabase"><span>Neighbor Database</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWbts"><span>Output Wbts</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcell"><span>Output Wcell</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellAc"><span>Output Wcell Ac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellLc"><span>Output Wcell Lc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellPc"><span>Output Wcell Pc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellHc"><span>Output Wcell Hc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellPS"><span>Output Wcell PS</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellSib"><span>Output Wcell Sib</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWcellUraid"><span>Output Wcell Uraid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputWlcse"><span>Output Wlcse</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputAdji"><span>Output Adji</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputAdjs"><span>Output Adjs</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputAdjg"><span>Output Adjg</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="outputAdjw"><span>Output Adjw</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let newSiteCreation of newSiteCreations ;trackBy: trackId">
+                <td><a [routerLink]="['/new-site-creation', newSiteCreation.id, 'view' ]">{{newSiteCreation.id}}</a></td>
+                <td>{{newSiteCreation.requestName}}</td>
+                <td>{{newSiteCreation.wbtsId}}</td>
+                <td>{{newSiteCreation.rncId}}</td>
+                <td>{{newSiteCreation.wbtsName}}</td>
+                <!--td>{{newSiteCreation.lcrId}}</td>
+                <td>{{newSiteCreation.lac}}</td>
+                <td>{{newSiteCreation.rac}}</td>
+                <td>{{newSiteCreation.sac}}</td>
+                <td>{{newSiteCreation.cId}}</td>
+                <td>{{newSiteCreation.templateName}}</td>
+                <td>{{newSiteCreation.priSrcCode}}</td>
+                <td>{{newSiteCreation.wlcseId}}</td>
+                <td>{{newSiteCreation.antBearing}}</td>
+                <td>{{newSiteCreation.wlcseRncId}}</td>
+                <td>{{newSiteCreation.antennaCoordLatitude}}</td>
+                <td>{{newSiteCreation.antennaCoordLongitude}}</td>
+                <td>{{newSiteCreation.siteName}}</td>
+                <td>{{newSiteCreation.technology}}</td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersWbts" (click)="openFile(newSiteCreation.goldenParametersWbtsContentType, newSiteCreation.goldenParametersWbts)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersWbts">{{newSiteCreation.goldenParametersWbtsContentType}}, {{byteSize(newSiteCreation.goldenParametersWbts)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersWcell" (click)="openFile(newSiteCreation.goldenParametersWcellContentType, newSiteCreation.goldenParametersWcell)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersWcell">{{newSiteCreation.goldenParametersWcellContentType}}, {{byteSize(newSiteCreation.goldenParametersWcell)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersWlcse" (click)="openFile(newSiteCreation.goldenParametersWlcseContentType, newSiteCreation.goldenParametersWlcse)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersWlcse">{{newSiteCreation.goldenParametersWlcseContentType}}, {{byteSize(newSiteCreation.goldenParametersWlcse)}}</span>
+                </td>
+                <td>{{newSiteCreation.adjGid}}</td>
+                <td>{{newSiteCreation.adjgNcc}}</td>
+                <td>{{newSiteCreation.adjgBcc}}</td>
+                <td>{{newSiteCreation.adjgBcch}}</td>
+                <td>{{newSiteCreation.adjgBandIndicator}}</td>
+                <td>{{newSiteCreation.adjgCi}}</td>
+                <td>{{newSiteCreation.adjgLac}}</td>
+                <td>{{newSiteCreation.adjsId}}</td>
+                <td>{{newSiteCreation.adjsCi}}</td>
+                <td>{{newSiteCreation.adjsLac}}</td>
+                <td>{{newSiteCreation.adjsRac}}</td>
+                <td>{{newSiteCreation.adjsRnCid}}</td>
+                <td>{{newSiteCreation.adjsSrcCode}}</td>
+                <td>{{newSiteCreation.adjiId}}</td>
+                <td>{{newSiteCreation.adjiCi}}</td>
+                <td>{{newSiteCreation.adjiLac}}</td>
+                <td>{{newSiteCreation.adjiRac}}</td>
+                <td>{{newSiteCreation.adjiRnCid}}</td>
+                <td>{{newSiteCreation.adjiSrcCode}}</td>
+                <td>{{newSiteCreation.bscId}}</td>
+                <td>{{newSiteCreation.bcfId}}</td>
+                <td>{{newSiteCreation.btsId}}</td>
+                <td>{{newSiteCreation.adjwCid}}</td>
+                <td>{{newSiteCreation.adjwLac}}</td>
+                <td>{{newSiteCreation.adjwRncId}}</td>
+                <td>{{newSiteCreation.scramblingCode}}</td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersAdji" (click)="openFile(newSiteCreation.goldenParametersAdjiContentType, newSiteCreation.goldenParametersAdji)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersAdji">{{newSiteCreation.goldenParametersAdjiContentType}}, {{byteSize(newSiteCreation.goldenParametersAdji)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersAdjs" (click)="openFile(newSiteCreation.goldenParametersAdjsContentType, newSiteCreation.goldenParametersAdjs)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersAdjs">{{newSiteCreation.goldenParametersAdjsContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjs)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersAdjg" (click)="openFile(newSiteCreation.goldenParametersAdjgContentType, newSiteCreation.goldenParametersAdjg)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersAdjg">{{newSiteCreation.goldenParametersAdjgContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjg)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.goldenParametersAdjw" (click)="openFile(newSiteCreation.goldenParametersAdjwContentType, newSiteCreation.goldenParametersAdjw)">open</a>
+                    <span *ngIf="newSiteCreation.goldenParametersAdjw">{{newSiteCreation.goldenParametersAdjwContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjw)}}</span>
+                </td-->
+                <td>{{newSiteCreation.rfDatabase}}</td>
+                <td>{{newSiteCreation.neighborDatabase}}</td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWbts" (click)="openFile(newSiteCreation.outputWbtsContentType, newSiteCreation.outputWbts)">open</a>
+                    <span *ngIf="newSiteCreation.outputWbts">{{newSiteCreation.outputWbtsContentType}}, {{byteSize(newSiteCreation.outputWbts)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcell" (click)="openFile(newSiteCreation.outputWcellContentType, newSiteCreation.outputWcell)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcell">{{newSiteCreation.outputWcellContentType}}, {{byteSize(newSiteCreation.outputWcell)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellAc" (click)="openFile(newSiteCreation.outputWcellAcContentType, newSiteCreation.outputWcellAc)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellAc">{{newSiteCreation.outputWcellAcContentType}}, {{byteSize(newSiteCreation.outputWcellAc)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellLc" (click)="openFile(newSiteCreation.outputWcellLcContentType, newSiteCreation.outputWcellLc)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellLc">{{newSiteCreation.outputWcellLcContentType}}, {{byteSize(newSiteCreation.outputWcellLc)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellPc" (click)="openFile(newSiteCreation.outputWcellPcContentType, newSiteCreation.outputWcellPc)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellPc">{{newSiteCreation.outputWcellPcContentType}}, {{byteSize(newSiteCreation.outputWcellPc)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellHc" (click)="openFile(newSiteCreation.outputWcellHcContentType, newSiteCreation.outputWcellHc)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellHc">{{newSiteCreation.outputWcellHcContentType}}, {{byteSize(newSiteCreation.outputWcellHc)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellPS" (click)="openFile(newSiteCreation.outputWcellPSContentType, newSiteCreation.outputWcellPS)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellPS">{{newSiteCreation.outputWcellPSContentType}}, {{byteSize(newSiteCreation.outputWcellPS)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellSib" (click)="openFile(newSiteCreation.outputWcellSibContentType, newSiteCreation.outputWcellSib)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellSib">{{newSiteCreation.outputWcellSibContentType}}, {{byteSize(newSiteCreation.outputWcellSib)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWcellUraid" (click)="openFile(newSiteCreation.outputWcellUraidContentType, newSiteCreation.outputWcellUraid)">open</a>
+                    <span *ngIf="newSiteCreation.outputWcellUraid">{{newSiteCreation.outputWcellUraidContentType}}, {{byteSize(newSiteCreation.outputWcellUraid)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputWlcse" (click)="openFile(newSiteCreation.outputWlcseContentType, newSiteCreation.outputWlcse)">open</a>
+                    <span *ngIf="newSiteCreation.outputWlcse">{{newSiteCreation.outputWlcseContentType}}, {{byteSize(newSiteCreation.outputWlcse)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputAdji" (click)="openFile(newSiteCreation.outputAdjiContentType, newSiteCreation.outputAdji)">open</a>
+                    <span *ngIf="newSiteCreation.outputAdji">{{newSiteCreation.outputAdjiContentType}}, {{byteSize(newSiteCreation.outputAdji)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputAdjs" (click)="openFile(newSiteCreation.outputAdjsContentType, newSiteCreation.outputAdjs)">open</a>
+                    <span *ngIf="newSiteCreation.outputAdjs">{{newSiteCreation.outputAdjsContentType}}, {{byteSize(newSiteCreation.outputAdjs)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputAdjg" (click)="openFile(newSiteCreation.outputAdjgContentType, newSiteCreation.outputAdjg)">open</a>
+                    <span *ngIf="newSiteCreation.outputAdjg">{{newSiteCreation.outputAdjgContentType}}, {{byteSize(newSiteCreation.outputAdjg)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="newSiteCreation.outputAdjw" (click)="openFile(newSiteCreation.outputAdjwContentType, newSiteCreation.outputAdjw)">open</a>
+                    <span *ngIf="newSiteCreation.outputAdjw">{{newSiteCreation.outputAdjwContentType}}, {{byteSize(newSiteCreation.outputAdjw)}}</span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/new-site-creation', newSiteCreation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/new-site-creation', newSiteCreation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'new-site-creation/'+ newSiteCreation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="newSiteCreations && newSiteCreations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

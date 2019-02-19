@@ -1,0 +1,84 @@
+entity NewSiteCreation{
+	requestName String required ,
+	wbtsId String,
+    rncId String,
+    wbtsName String,
+    lcrId String,
+    lac String,
+    rac String,
+    sac String,
+	cId String,
+    templateName String,
+    priSrcCode String,
+    wlcseId String,
+    antBearing String,
+    wlcseRncId String,
+    antennaCoordLatitude String,
+    antennaCoordLongitude String,
+    siteName String,
+    technology String,
+	goldenParametersWbts Blob,
+	goldenParametersWcell Blob,
+	goldenParametersWlcse Blob,
+	
+	adjGid String,
+	adjgNcc String,
+	adjgBcc String,
+	adjgBcch String,
+	adjgBandIndicator String,
+	adjgCi String,	
+	adjgLac String,
+	
+	adjsId String,
+	adjsCi String,
+	adjsLac String,
+	adjsRac String,
+	adjsRnCid String,
+	adjsSrcCode String,
+	
+	adjiId String,
+	adjiCi String,
+	adjiLac String,
+	adjiRac String,
+	adjiRnCid String,
+	adjiSrcCode String,
+	
+	bscId String,
+	bcfId String,
+	btsId String,
+	adjwCid String,
+	adjwLac String,
+	adjwRncId String,
+	scramblingCode String,
+	
+	goldenParametersAdji Blob,
+	goldenParametersAdjs Blob,
+	goldenParametersAdjg Blob,
+	goldenParametersAdjw Blob,	
+	
+	
+	rfDatabase TextBlob,
+	neighborDatabase TextBlob,
+	outputWbts Blob,
+	outputWcell Blob,
+	outputWcellAc Blob,
+	outputWcellLc Blob,
+	outputWcellPc Blob,
+	outputWcellHc Blob,
+	outputWcellPS Blob,
+	outputWcellSib Blob,
+	outputWcellUraid Blob,
+	outputWlcse Blob,
+	outputAdji Blob,
+	outputAdjs Blob,
+	outputAdjg Blob,
+	outputAdjw Blob
+	
+
+
+}
+
+paginate NewSiteCreation with pagination
+dto * with mapstruct
+service all with serviceImpl
+

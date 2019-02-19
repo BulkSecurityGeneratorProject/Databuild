@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity NewSiteCreation.
+    -->
+    <changeSet id="20190102083215-1" author="jhipster">
+        <createTable tableName="new_site_creation">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="request_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="wbts_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rnc_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="wbts_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lcr_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="c_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="template_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pri_src_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="wlcse_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ant_bearing" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="wlcse_rnc_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="antenna_coord_latitude" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="antenna_coord_longitude" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="site_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="technology" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_wbts" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_wbts_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_wcell" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_wcell_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_wlcse" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_wlcse_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adj_gid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjg_ncc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjg_bcc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjg_bcch" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjg_band_indicator" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjg_ci" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjg_lac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjs_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjs_ci" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjs_lac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjs_rac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjs_rn_cid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjs_src_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adji_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adji_ci" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adji_lac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adji_rac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adji_rn_cid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adji_src_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bsc_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bcf_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bts_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjw_cid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjw_lac" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adjw_rnc_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="scrambling_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_adji" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_adji_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_adjs" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_adjs_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_adjg" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_adjg_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="golden_parameters_adjw" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="golden_parameters_adjw_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rf_database" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="neighbor_database" type="clob">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wbts" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wbts_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_ac" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_ac_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_lc" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_lc_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_pc" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_pc_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_hc" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_hc_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_ps" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_ps_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_sib" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_sib_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wcell_uraid" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wcell_uraid_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_wlcse" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_wlcse_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_adji" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_adji_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_adjs" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_adjs_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_adjg" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_adjg_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="output_adjw" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="output_adjw_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

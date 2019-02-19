@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.nokia.databuild"
+    },
+    "jhipsterVersion": "5.4.2",
+    "applicationType": "monolith",
+    "baseName": "databuild_java",
+    "packageName": "com.nokia.databuild",
+    "packageFolder": "com/nokia/databuild",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZDkwYzFhYjZjNmNiN2RhNjU1MjAyMzliZDcxNWQ5NTE4NjI4ZjZmZDM0OWU5MDFlMjY4ZjlhMDljNDQwN2RhMTBjODQ0NDMxZjlhZjI2ZjkxYTZiMzliNmU5ZGRjYzgzNzA3MjAwNTY0YjVhMjY2NzAzNjZlOGM5NGNlMjZiODA=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}

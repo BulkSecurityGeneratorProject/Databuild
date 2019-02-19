@@ -1,0 +1,638 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-new-site-creation-heading">Create or edit a New Site Creation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!newSiteCreation.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="newSiteCreation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_requestName">Request Name</label>
+                    <input type="text" class="form-control" name="requestName" id="field_requestName"
+                        [(ngModel)]="newSiteCreation.requestName" required/>
+                    <div [hidden]="!(editForm.controls.requestName?.dirty && editForm.controls.requestName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.requestName?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wbtsId">Wbts Id</label>
+                    <input type="text" class="form-control" name="wbtsId" id="field_wbtsId"
+                        [(ngModel)]="newSiteCreation.wbtsId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rncId">Rnc Id</label>
+                    <input type="text" class="form-control" name="rncId" id="field_rncId"
+                        [(ngModel)]="newSiteCreation.rncId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wbtsName">Wbts Name</label>
+                    <input type="text" class="form-control" name="wbtsName" id="field_wbtsName"
+                        [(ngModel)]="newSiteCreation.wbtsName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lcrId">Lcr Id</label>
+                    <input type="text" class="form-control" name="lcrId" id="field_lcrId"
+                        [(ngModel)]="newSiteCreation.lcrId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lac">Lac</label>
+                    <input type="text" class="form-control" name="lac" id="field_lac"
+                        [(ngModel)]="newSiteCreation.lac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rac">Rac</label>
+                    <input type="text" class="form-control" name="rac" id="field_rac"
+                        [(ngModel)]="newSiteCreation.rac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sac">Sac</label>
+                    <input type="text" class="form-control" name="sac" id="field_sac"
+                        [(ngModel)]="newSiteCreation.sac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cId">C Id</label>
+                    <input type="text" class="form-control" name="cId" id="field_cId"
+                        [(ngModel)]="newSiteCreation.cId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_templateName">Template Name</label>
+                    <input type="text" class="form-control" name="templateName" id="field_templateName"
+                        [(ngModel)]="newSiteCreation.templateName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_priSrcCode">Pri Src Code</label>
+                    <input type="text" class="form-control" name="priSrcCode" id="field_priSrcCode"
+                        [(ngModel)]="newSiteCreation.priSrcCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wlcseId">Wlcse Id</label>
+                    <input type="text" class="form-control" name="wlcseId" id="field_wlcseId"
+                        [(ngModel)]="newSiteCreation.wlcseId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_antBearing">Ant Bearing</label>
+                    <input type="text" class="form-control" name="antBearing" id="field_antBearing"
+                        [(ngModel)]="newSiteCreation.antBearing" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_wlcseRncId">Wlcse Rnc Id</label>
+                    <input type="text" class="form-control" name="wlcseRncId" id="field_wlcseRncId"
+                        [(ngModel)]="newSiteCreation.wlcseRncId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_antennaCoordLatitude">Antenna Coord Latitude</label>
+                    <input type="text" class="form-control" name="antennaCoordLatitude" id="field_antennaCoordLatitude"
+                        [(ngModel)]="newSiteCreation.antennaCoordLatitude" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_antennaCoordLongitude">Antenna Coord Longitude</label>
+                    <input type="text" class="form-control" name="antennaCoordLongitude" id="field_antennaCoordLongitude"
+                        [(ngModel)]="newSiteCreation.antennaCoordLongitude" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_siteName">Site Name</label>
+                    <input type="text" class="form-control" name="siteName" id="field_siteName"
+                        [(ngModel)]="newSiteCreation.siteName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_technology">Technology</label>
+                    <input type="text" class="form-control" name="technology" id="field_technology"
+                        [(ngModel)]="newSiteCreation.technology" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersWbts">Golden Parameters Wbts</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersWbts" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersWbtsContentType, newSiteCreation.goldenParametersWbts)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersWbtsContentType}}, {{byteSize(newSiteCreation.goldenParametersWbts)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersWbts=null;newSiteCreation.goldenParametersWbtsContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersWbts" (change)="setFileData($event, newSiteCreation, 'goldenParametersWbts', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersWbts" id="field_goldenParametersWbts"
+                        [(ngModel)]="newSiteCreation.goldenParametersWbts" />
+                    <input type="hidden" class="form-control" name="goldenParametersWbtsContentType" id="field_goldenParametersWbtsContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersWbtsContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersWcell">Golden Parameters Wcell</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersWcell" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersWcellContentType, newSiteCreation.goldenParametersWcell)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersWcellContentType}}, {{byteSize(newSiteCreation.goldenParametersWcell)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersWcell=null;newSiteCreation.goldenParametersWcellContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersWcell" (change)="setFileData($event, newSiteCreation, 'goldenParametersWcell', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersWcell" id="field_goldenParametersWcell"
+                        [(ngModel)]="newSiteCreation.goldenParametersWcell" />
+                    <input type="hidden" class="form-control" name="goldenParametersWcellContentType" id="field_goldenParametersWcellContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersWcellContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersWlcse">Golden Parameters Wlcse</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersWlcse" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersWlcseContentType, newSiteCreation.goldenParametersWlcse)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersWlcseContentType}}, {{byteSize(newSiteCreation.goldenParametersWlcse)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersWlcse=null;newSiteCreation.goldenParametersWlcseContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersWlcse" (change)="setFileData($event, newSiteCreation, 'goldenParametersWlcse', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersWlcse" id="field_goldenParametersWlcse"
+                        [(ngModel)]="newSiteCreation.goldenParametersWlcse" />
+                    <input type="hidden" class="form-control" name="goldenParametersWlcseContentType" id="field_goldenParametersWlcseContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersWlcseContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjGid">Adj Gid</label>
+                    <input type="text" class="form-control" name="adjGid" id="field_adjGid"
+                        [(ngModel)]="newSiteCreation.adjGid" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjgNcc">Adjg Ncc</label>
+                    <input type="text" class="form-control" name="adjgNcc" id="field_adjgNcc"
+                        [(ngModel)]="newSiteCreation.adjgNcc" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjgBcc">Adjg Bcc</label>
+                    <input type="text" class="form-control" name="adjgBcc" id="field_adjgBcc"
+                        [(ngModel)]="newSiteCreation.adjgBcc" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjgBcch">Adjg Bcch</label>
+                    <input type="text" class="form-control" name="adjgBcch" id="field_adjgBcch"
+                        [(ngModel)]="newSiteCreation.adjgBcch" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjgBandIndicator">Adjg Band Indicator</label>
+                    <input type="text" class="form-control" name="adjgBandIndicator" id="field_adjgBandIndicator"
+                        [(ngModel)]="newSiteCreation.adjgBandIndicator" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjgCi">Adjg Ci</label>
+                    <input type="text" class="form-control" name="adjgCi" id="field_adjgCi"
+                        [(ngModel)]="newSiteCreation.adjgCi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjgLac">Adjg Lac</label>
+                    <input type="text" class="form-control" name="adjgLac" id="field_adjgLac"
+                        [(ngModel)]="newSiteCreation.adjgLac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjsId">Adjs Id</label>
+                    <input type="text" class="form-control" name="adjsId" id="field_adjsId"
+                        [(ngModel)]="newSiteCreation.adjsId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjsCi">Adjs Ci</label>
+                    <input type="text" class="form-control" name="adjsCi" id="field_adjsCi"
+                        [(ngModel)]="newSiteCreation.adjsCi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjsLac">Adjs Lac</label>
+                    <input type="text" class="form-control" name="adjsLac" id="field_adjsLac"
+                        [(ngModel)]="newSiteCreation.adjsLac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjsRac">Adjs Rac</label>
+                    <input type="text" class="form-control" name="adjsRac" id="field_adjsRac"
+                        [(ngModel)]="newSiteCreation.adjsRac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjsRnCid">Adjs Rn Cid</label>
+                    <input type="text" class="form-control" name="adjsRnCid" id="field_adjsRnCid"
+                        [(ngModel)]="newSiteCreation.adjsRnCid" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjsSrcCode">Adjs Src Code</label>
+                    <input type="text" class="form-control" name="adjsSrcCode" id="field_adjsSrcCode"
+                        [(ngModel)]="newSiteCreation.adjsSrcCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjiId">Adji Id</label>
+                    <input type="text" class="form-control" name="adjiId" id="field_adjiId"
+                        [(ngModel)]="newSiteCreation.adjiId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjiCi">Adji Ci</label>
+                    <input type="text" class="form-control" name="adjiCi" id="field_adjiCi"
+                        [(ngModel)]="newSiteCreation.adjiCi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjiLac">Adji Lac</label>
+                    <input type="text" class="form-control" name="adjiLac" id="field_adjiLac"
+                        [(ngModel)]="newSiteCreation.adjiLac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjiRac">Adji Rac</label>
+                    <input type="text" class="form-control" name="adjiRac" id="field_adjiRac"
+                        [(ngModel)]="newSiteCreation.adjiRac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjiRnCid">Adji Rn Cid</label>
+                    <input type="text" class="form-control" name="adjiRnCid" id="field_adjiRnCid"
+                        [(ngModel)]="newSiteCreation.adjiRnCid" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjiSrcCode">Adji Src Code</label>
+                    <input type="text" class="form-control" name="adjiSrcCode" id="field_adjiSrcCode"
+                        [(ngModel)]="newSiteCreation.adjiSrcCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bscId">Bsc Id</label>
+                    <input type="text" class="form-control" name="bscId" id="field_bscId"
+                        [(ngModel)]="newSiteCreation.bscId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bcfId">Bcf Id</label>
+                    <input type="text" class="form-control" name="bcfId" id="field_bcfId"
+                        [(ngModel)]="newSiteCreation.bcfId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_btsId">Bts Id</label>
+                    <input type="text" class="form-control" name="btsId" id="field_btsId"
+                        [(ngModel)]="newSiteCreation.btsId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjwCid">Adjw Cid</label>
+                    <input type="text" class="form-control" name="adjwCid" id="field_adjwCid"
+                        [(ngModel)]="newSiteCreation.adjwCid" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjwLac">Adjw Lac</label>
+                    <input type="text" class="form-control" name="adjwLac" id="field_adjwLac"
+                        [(ngModel)]="newSiteCreation.adjwLac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adjwRncId">Adjw Rnc Id</label>
+                    <input type="text" class="form-control" name="adjwRncId" id="field_adjwRncId"
+                        [(ngModel)]="newSiteCreation.adjwRncId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_scramblingCode">Scrambling Code</label>
+                    <input type="text" class="form-control" name="scramblingCode" id="field_scramblingCode"
+                        [(ngModel)]="newSiteCreation.scramblingCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersAdji">Golden Parameters Adji</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersAdji" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersAdjiContentType, newSiteCreation.goldenParametersAdji)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersAdjiContentType}}, {{byteSize(newSiteCreation.goldenParametersAdji)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersAdji=null;newSiteCreation.goldenParametersAdjiContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersAdji" (change)="setFileData($event, newSiteCreation, 'goldenParametersAdji', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersAdji" id="field_goldenParametersAdji"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdji" />
+                    <input type="hidden" class="form-control" name="goldenParametersAdjiContentType" id="field_goldenParametersAdjiContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjiContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersAdjs">Golden Parameters Adjs</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersAdjs" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersAdjsContentType, newSiteCreation.goldenParametersAdjs)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersAdjsContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjs)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersAdjs=null;newSiteCreation.goldenParametersAdjsContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersAdjs" (change)="setFileData($event, newSiteCreation, 'goldenParametersAdjs', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersAdjs" id="field_goldenParametersAdjs"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjs" />
+                    <input type="hidden" class="form-control" name="goldenParametersAdjsContentType" id="field_goldenParametersAdjsContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjsContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersAdjg">Golden Parameters Adjg</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersAdjg" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersAdjgContentType, newSiteCreation.goldenParametersAdjg)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersAdjgContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjg)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersAdjg=null;newSiteCreation.goldenParametersAdjgContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersAdjg" (change)="setFileData($event, newSiteCreation, 'goldenParametersAdjg', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersAdjg" id="field_goldenParametersAdjg"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjg" />
+                    <input type="hidden" class="form-control" name="goldenParametersAdjgContentType" id="field_goldenParametersAdjgContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjgContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_goldenParametersAdjw">Golden Parameters Adjw</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.goldenParametersAdjw" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.goldenParametersAdjwContentType, newSiteCreation.goldenParametersAdjw)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.goldenParametersAdjwContentType}}, {{byteSize(newSiteCreation.goldenParametersAdjw)}}</span>
+                            <button type="button" (click)="newSiteCreation.goldenParametersAdjw=null;newSiteCreation.goldenParametersAdjwContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_goldenParametersAdjw" (change)="setFileData($event, newSiteCreation, 'goldenParametersAdjw', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="goldenParametersAdjw" id="field_goldenParametersAdjw"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjw" />
+                    <input type="hidden" class="form-control" name="goldenParametersAdjwContentType" id="field_goldenParametersAdjwContentType"
+                        [(ngModel)]="newSiteCreation.goldenParametersAdjwContentType" />
+                </div>
+                <!--div class="form-group">
+                    <label class="form-control-label" for="field_rfDatabase">Rf Database</label>
+                    <textarea class="form-control" name="rfDatabase" id="field_rfDatabase"
+                        [(ngModel)]="newSiteCreation.rfDatabase" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_neighborDatabase">Neighbor Database</label>
+                    <textarea class="form-control" name="neighborDatabase" id="field_neighborDatabase"
+                        [(ngModel)]="newSiteCreation.neighborDatabase" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWbts">Output Wbts</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWbts" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWbtsContentType, newSiteCreation.outputWbts)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWbtsContentType}}, {{byteSize(newSiteCreation.outputWbts)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWbts=null;newSiteCreation.outputWbtsContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWbts" (change)="setFileData($event, newSiteCreation, 'outputWbts', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWbts" id="field_outputWbts"
+                        [(ngModel)]="newSiteCreation.outputWbts" />
+                    <input type="hidden" class="form-control" name="outputWbtsContentType" id="field_outputWbtsContentType"
+                        [(ngModel)]="newSiteCreation.outputWbtsContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcell">Output Wcell</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcell" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellContentType, newSiteCreation.outputWcell)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellContentType}}, {{byteSize(newSiteCreation.outputWcell)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcell=null;newSiteCreation.outputWcellContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcell" (change)="setFileData($event, newSiteCreation, 'outputWcell', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcell" id="field_outputWcell"
+                        [(ngModel)]="newSiteCreation.outputWcell" />
+                    <input type="hidden" class="form-control" name="outputWcellContentType" id="field_outputWcellContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellAc">Output Wcell Ac</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellAc" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellAcContentType, newSiteCreation.outputWcellAc)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellAcContentType}}, {{byteSize(newSiteCreation.outputWcellAc)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellAc=null;newSiteCreation.outputWcellAcContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellAc" (change)="setFileData($event, newSiteCreation, 'outputWcellAc', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellAc" id="field_outputWcellAc"
+                        [(ngModel)]="newSiteCreation.outputWcellAc" />
+                    <input type="hidden" class="form-control" name="outputWcellAcContentType" id="field_outputWcellAcContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellAcContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellLc">Output Wcell Lc</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellLc" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellLcContentType, newSiteCreation.outputWcellLc)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellLcContentType}}, {{byteSize(newSiteCreation.outputWcellLc)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellLc=null;newSiteCreation.outputWcellLcContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellLc" (change)="setFileData($event, newSiteCreation, 'outputWcellLc', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellLc" id="field_outputWcellLc"
+                        [(ngModel)]="newSiteCreation.outputWcellLc" />
+                    <input type="hidden" class="form-control" name="outputWcellLcContentType" id="field_outputWcellLcContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellLcContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellPc">Output Wcell Pc</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellPc" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellPcContentType, newSiteCreation.outputWcellPc)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellPcContentType}}, {{byteSize(newSiteCreation.outputWcellPc)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellPc=null;newSiteCreation.outputWcellPcContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellPc" (change)="setFileData($event, newSiteCreation, 'outputWcellPc', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellPc" id="field_outputWcellPc"
+                        [(ngModel)]="newSiteCreation.outputWcellPc" />
+                    <input type="hidden" class="form-control" name="outputWcellPcContentType" id="field_outputWcellPcContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellPcContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellHc">Output Wcell Hc</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellHc" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellHcContentType, newSiteCreation.outputWcellHc)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellHcContentType}}, {{byteSize(newSiteCreation.outputWcellHc)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellHc=null;newSiteCreation.outputWcellHcContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellHc" (change)="setFileData($event, newSiteCreation, 'outputWcellHc', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellHc" id="field_outputWcellHc"
+                        [(ngModel)]="newSiteCreation.outputWcellHc" />
+                    <input type="hidden" class="form-control" name="outputWcellHcContentType" id="field_outputWcellHcContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellHcContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellPS">Output Wcell PS</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellPS" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellPSContentType, newSiteCreation.outputWcellPS)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellPSContentType}}, {{byteSize(newSiteCreation.outputWcellPS)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellPS=null;newSiteCreation.outputWcellPSContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellPS" (change)="setFileData($event, newSiteCreation, 'outputWcellPS', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellPS" id="field_outputWcellPS"
+                        [(ngModel)]="newSiteCreation.outputWcellPS" />
+                    <input type="hidden" class="form-control" name="outputWcellPSContentType" id="field_outputWcellPSContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellPSContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellSib">Output Wcell Sib</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellSib" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellSibContentType, newSiteCreation.outputWcellSib)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellSibContentType}}, {{byteSize(newSiteCreation.outputWcellSib)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellSib=null;newSiteCreation.outputWcellSibContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellSib" (change)="setFileData($event, newSiteCreation, 'outputWcellSib', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellSib" id="field_outputWcellSib"
+                        [(ngModel)]="newSiteCreation.outputWcellSib" />
+                    <input type="hidden" class="form-control" name="outputWcellSibContentType" id="field_outputWcellSibContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellSibContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWcellUraid">Output Wcell Uraid</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWcellUraid" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWcellUraidContentType, newSiteCreation.outputWcellUraid)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWcellUraidContentType}}, {{byteSize(newSiteCreation.outputWcellUraid)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWcellUraid=null;newSiteCreation.outputWcellUraidContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWcellUraid" (change)="setFileData($event, newSiteCreation, 'outputWcellUraid', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWcellUraid" id="field_outputWcellUraid"
+                        [(ngModel)]="newSiteCreation.outputWcellUraid" />
+                    <input type="hidden" class="form-control" name="outputWcellUraidContentType" id="field_outputWcellUraidContentType"
+                        [(ngModel)]="newSiteCreation.outputWcellUraidContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputWlcse">Output Wlcse</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputWlcse" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputWlcseContentType, newSiteCreation.outputWlcse)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputWlcseContentType}}, {{byteSize(newSiteCreation.outputWlcse)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputWlcse=null;newSiteCreation.outputWlcseContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputWlcse" (change)="setFileData($event, newSiteCreation, 'outputWlcse', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputWlcse" id="field_outputWlcse"
+                        [(ngModel)]="newSiteCreation.outputWlcse" />
+                    <input type="hidden" class="form-control" name="outputWlcseContentType" id="field_outputWlcseContentType"
+                        [(ngModel)]="newSiteCreation.outputWlcseContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputAdji">Output Adji</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputAdji" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputAdjiContentType, newSiteCreation.outputAdji)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputAdjiContentType}}, {{byteSize(newSiteCreation.outputAdji)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputAdji=null;newSiteCreation.outputAdjiContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputAdji" (change)="setFileData($event, newSiteCreation, 'outputAdji', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputAdji" id="field_outputAdji"
+                        [(ngModel)]="newSiteCreation.outputAdji" />
+                    <input type="hidden" class="form-control" name="outputAdjiContentType" id="field_outputAdjiContentType"
+                        [(ngModel)]="newSiteCreation.outputAdjiContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputAdjs">Output Adjs</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputAdjs" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputAdjsContentType, newSiteCreation.outputAdjs)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputAdjsContentType}}, {{byteSize(newSiteCreation.outputAdjs)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputAdjs=null;newSiteCreation.outputAdjsContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputAdjs" (change)="setFileData($event, newSiteCreation, 'outputAdjs', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputAdjs" id="field_outputAdjs"
+                        [(ngModel)]="newSiteCreation.outputAdjs" />
+                    <input type="hidden" class="form-control" name="outputAdjsContentType" id="field_outputAdjsContentType"
+                        [(ngModel)]="newSiteCreation.outputAdjsContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputAdjg">Output Adjg</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputAdjg" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputAdjgContentType, newSiteCreation.outputAdjg)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputAdjgContentType}}, {{byteSize(newSiteCreation.outputAdjg)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputAdjg=null;newSiteCreation.outputAdjgContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputAdjg" (change)="setFileData($event, newSiteCreation, 'outputAdjg', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputAdjg" id="field_outputAdjg"
+                        [(ngModel)]="newSiteCreation.outputAdjg" />
+                    <input type="hidden" class="form-control" name="outputAdjgContentType" id="field_outputAdjgContentType"
+                        [(ngModel)]="newSiteCreation.outputAdjgContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outputAdjw">Output Adjw</label>
+                    <div>
+                        <div *ngIf="newSiteCreation.outputAdjw" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(newSiteCreation.outputAdjwContentType, newSiteCreation.outputAdjw)">open</a><br>
+                            <span class="pull-left">{{newSiteCreation.outputAdjwContentType}}, {{byteSize(newSiteCreation.outputAdjw)}}</span>
+                            <button type="button" (click)="newSiteCreation.outputAdjw=null;newSiteCreation.outputAdjwContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_outputAdjw" (change)="setFileData($event, newSiteCreation, 'outputAdjw', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="outputAdjw" id="field_outputAdjw"
+                        [(ngModel)]="newSiteCreation.outputAdjw" />
+                    <input type="hidden" class="form-control" name="outputAdjwContentType" id="field_outputAdjwContentType"
+                        [(ngModel)]="newSiteCreation.outputAdjwContentType" />
+                </div-->
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
